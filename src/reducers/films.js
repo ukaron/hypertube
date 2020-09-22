@@ -1,10 +1,12 @@
-import { trendingFilmsRequest, trendingFilmsSuccess} from '../actions/films';
-import {TRENDING_FILMS_REQUEST, TRENDING_FILMS_ERROR, TRENDING_FILMS_SUCCESS} from '../constants/actions/films';
-import {getTrendingFilms} from '../utils/api'
+import {
+    TRENDING_FILMS_REQUEST, TRENDING_FILMS_ERROR,TRENDING_FILMS_SUCCESS,
+    SEARCH_FILM_SUCCESS, SEARCH_FILM_REQUEST, SEARCH_FILM_ERROR
+} from '../constants/actions/films';
 
 const initialState = {
     loading: false,
-    films: [],
+    trendingFilms: [],
+    searchFilms: [],
     error: ''
 }
 
@@ -16,27 +18,39 @@ const films = (state= initialState, action) => {
             };
         case TRENDING_FILMS_SUCCESS:
             return {
+                ...state,
                 loading: false,
-                films: action.payload,
+                trendingFilms: action.payload,
                 error: ''
             };
         case TRENDING_FILMS_ERROR:
             return {
+                ...state,
                 loading: false,
-                films: [],
+                trendingFilms: [],
+                error: action.payload
+            }
+        case SEARCH_FILM_REQUEST:
+            return { ...state,
+                loadingSearch: true,
+                searchFilms: action.payload,
+            };
+        case SEARCH_FILM_SUCCESS:
+            return {
+                ...state,
+                loadingSearch: false,
+                searchFilms: action.payload,
+                error: ''
+            };
+        case SEARCH_FILM_ERROR:
+            return {
+                ...state,
+                loadingSearch: false,
+                searchFilms: [],
                 error: action.payload
             }
         default: return state;
     }
 }
 
-export const getUsers = (state) => {
-    return (dispatch) => {
-        dispatch(trendingFilmsRequest());
-        getTrendingFilms().then(res => {
-            dispatch(trendingFilmsSuccess(res.data.results));
-        });
-    }
-
-}
 export default films;

@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 export const ImagePoster = styled.img`
-width: 100px;
-height: 100px;
+min-width: 100px;
+    min-height: 150px;
+    max-width: 150px;
+    max-height: 245px;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    border: 0px solid #000000;
+    padding: 10px;
 `;
 
 export const FilmCard = styled.div`
-  max-width: 300px;
-  min-height: 250px;
-  display: inline-grid;
+    margin: 0 auto;
 `;

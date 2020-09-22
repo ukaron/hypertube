@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const ContentWraper = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    justify-items: center;
+export const ContentWrapper = styled.div`
+    margin: 20px;
+    padding: 10px;
+    height: 40%;
+    display: flex;
 `;
