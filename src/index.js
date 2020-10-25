@@ -3,7 +3,7 @@ import 'babel-polyfill';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
-import App from './components/app/App';
+import App from './components/App/App';
 import store from "./store/store";
 
 ReactDOM.render(

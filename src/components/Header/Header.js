@@ -1,6 +1,6 @@
 import React from "react";
 import { Wrapper } from "./header-styled";
-import SearchForm from "../../searchForm/SearchForm";
+import SearchForm from "../SearchForm/SearchForm";
 
 const Header = () => {
     return(

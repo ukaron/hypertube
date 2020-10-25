@@ -1,5 +1,5 @@
 import React from "react";
-import Movie from "../films/Movie";
+import Movie from "../Films/Movie";
 
 const TrendingFilms = props => {
     return (

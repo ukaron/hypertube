@@ -1,7 +1,7 @@
 import { Form, Field } from 'react-final-form';
 import { connect } from "react-redux";
 import React from "react";
-import {searchFilms} from "../../selectors/films";
+import {searchFilms} from "../../actions/films";
 
 const SearchForm = (props) => {
     const onSubmit = (name) => {

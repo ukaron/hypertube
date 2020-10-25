@@ -1,0 +1,1 @@
+export const USER_AUTH_STATUS = "USER_AUTH_STATUS";

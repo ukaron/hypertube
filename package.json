@@ -1,5 +1,5 @@
 {
-  "name": "untitled",
+  "name": "hypertube",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,14 +20,22 @@
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
+    "redux-devtools-dock-monitor": "^1.2.0",
+    "redux-devtools-log-monitor": "^2.1.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "shards-react": "^1.0.3",
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --host localhost --port 8080 --content-base src --inline  --hot",
     "build": "webpack --mode production"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
